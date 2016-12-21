@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper]{iopart}
+
+% Document information
+\newcommand{\DRN}{CAS-PUB-MDL-000003}
+\newcommand{\thisversion}{1.0}
+
+% Author information
+\input{common/authors/twhyntie.tex}
+
+% Packages and settings for CERN@school document formatting
+\input{common/tools/CERNatschool-packages.tex}
+
+% CERN@school macros and definitions
+\input{common/tools/defs.tex}
+
+% Journal short-cuts.
+\input{common/bib/journals}
+
+\begin{document}
+
+%
+% Title
+%
+% The CERN@school logo
+\input{common/tools/logoheader.tex}
+
+%\title{\titlefont %
+\title{%
+Maxwell's equations with and without\\
+magnetic charge
+}
+
+% 
+% Author information
+\author{\theauthorinit$^{1, \, 2}$}
+%
+\address{$^1$\theauthoraddressA}
+\address{$^2$\theauthoraddressB}
+\ead{\mailto{\theauthoremail}}
+
+%-----------------------------------------------------------------------------
+% Abstract
+\begin{abstract}
+Maxwell's equations of classical electromagnetism~\cite{Maxwell1865}
+are presented,
+in Gaussian units\footnote{
+The equations are written in the \emph{Gaussian unit}
+system, and not SI units, for simplicity;
+in this system the electric field $\electricfield$
+and the magnetic field $\magneticfield$ have the same units.},
+without (\ref{eq:1},~\ref{eq:2},~\ref{eq:3},~\ref{eq:4})
+and
+with (\ref{eq:1m},~\ref{eq:2m},~\ref{eq:3m},~\ref{eq:4m})
+magnetic charge.
+Equations~\ref{eq:1m} to~\ref{eq:4m} are
+taken from the front cover of the
+Monopole and Exotics Detector at the LHC (MoEDAL)
+Technical Design Report~\cite{MoEDAL2009},
+the Large Hadron Collider's seventh major experiment
+and the latest venture to be undertaken in the search for
+Dirac's hypothesised magnetic monopole~\cite{Dirac1931}.
+\end{abstract}
+%-----------------------------------------------------------------------------
+
+% Add a table of contents.
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+% Add the license information (CC-BY-4).
+\input{common/tools/licenseCCBY4}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Maxwell's equations without magnetic charge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Maxwell's equations
+\begin{figure}[htbp]
+  \centering
+\begin{eqnarray}
+\label{eq:1} \divvec{\electricfield} & = & 4 \pi \electricchargedensity\\ [10pt]
+\label{eq:2} \divvec{\magneticfield} & = & 0\\ [10pt]
+\label{eq:3} - \curlvec{\electricfield} & = & \myfrac{1}{\speedoflight} \, \timediff{\magneticfield}\\ [10pt]
+\label{eq:4}   \curlvec{\magneticfield} & = & \myfrac{1}{\speedoflight} \, \timediff{\electricfield} + \myfrac{4 \pi}{\speedoflight} \, \electriccurrentdensity
+\end{eqnarray}
+  \caption[Maxwell's equations of electromagnetism.]
+  {\label{fig:maxwellseqs}Maxwell's equations of electromagnetism~\cite{Maxwell1865} with the electric charge and current density terms highlighted (shaded boxes). Note that these are expressed in Gaussian units (not SI) for simplicity.}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Maxwell's equations with magnetic charge}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Maxwell's equations with magnetic charge.
+\begin{figure}[htbp]
+  \centering
+\begin{eqnarray}
+\label{eq:1m} \divvec{\electricfield} & = & 4 \pi \electricchargedensity\\ [10pt]
+\label{eq:2m} \divvec{\magneticfield} & = & 4 \pi \magneticchargedensity\\ [10pt]
+\label{eq:3m} - \curlvec{\electricfield} & = & \myfrac{1}{\speedoflight} \, \timediff{\magneticfield} + \myfrac{4 \pi}{\speedoflight} \, \magneticcurrentdensity\\ [10pt]
+\label{eq:4m}   \curlvec{\magneticfield} & = & \myfrac{1}{\speedoflight} \, \timediff{\electricfield} + \myfrac{4 \pi}{\speedoflight} \, \electriccurrentdensity
+\end{eqnarray}
+  \caption[Maxwell's equations of electromagnetism with magnetic charge.]
+  {\label{fig:maxwellseqsmagcharge}Maxwell's equations of electromagnetism with additional terms representing magnetic charge and current density, as shown on the cover of the MoEDAL Technical Design Report~\cite{MoEDAL2009}. Note that these are expressed in Gaussian units (not SI) for simplicity.}
+\end{figure}
+
+\clearpage
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section*{References}
+\bibliographystyle{unsrt.bst}
+\bibliography{MoEDAL}
+%
+%------------------------------------------------------------------------------
+
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\label{sec:ack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This work was supported by the UK Science and Technology Facilities Council
+(STFC) via grant ST/N00101X/1.
+%
+The author wishes to thank A. Pontzen for many fruitful discussions.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Version History}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%______________________________________________________________________________
+\begin{table}[h]
+\caption{\label{tab:version}Version history.}
+\lineup
+\begin{indented}
+\item[]\begin{tabular}{@{}clc}
+\br
+\centre{1}{$\quad$Version    $\quad$} & 
+\centre{1}{$\quad$Description$\quad$} &
+\centre{1}{$\quad$Author     $\quad$} \\
+\mr
+1.0 & Initial version. & TW \\
+\br
+\end{tabular}
+\end{indented}
+\end{table}
+%______________________________________________________________________________
+
+\end{document}
